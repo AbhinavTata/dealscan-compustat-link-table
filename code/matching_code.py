@@ -100,7 +100,7 @@ def main():
     print("Loading data...")
     
     # Load and preprocess dealscan data
-    dealscan = pd.read_csv("./data/dealscan.csv")
+    dealscan = pd.read_csv("../data/dealscan.csv")
     dealscan.fillna(0, inplace=True)
     dealscan['Tranche_Maturity_Date'] = pd.to_datetime(
         dealscan['Tranche_Maturity_Date'], format='%d/%m/%Y', errors='coerce'
@@ -128,7 +128,7 @@ def main():
     dealscan['Year'] = dealscan['Tranche_Active_Date'].astype(str).str[:4].astype(int)
 
     # load compustat data
-    compustat = pd.read_csv("./data/compustat.csv")
+    compustat = pd.read_csv("../data/compustat.csv")
     
     # precompute dictionaries for faster lookups
     print("Building lookup dictionaries...")
@@ -167,7 +167,7 @@ def main():
     
     # apply manual review results
     print("Applying manual review corrections...")
-    duplicates = pd.read_csv("./data/duplicates.csv")
+    duplicates = pd.read_csv("../data/duplicates.csv")
     duplicates.fillna(0, inplace=True)
     
     for _, row in duplicates.iterrows():
