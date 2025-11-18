@@ -1,1 +1,2 @@
-# dealscan-compustat-link-table
+# Dealscan Compustat Link Table
+We took data from compustat and dealscan to create a link table between Borrower ID and GVKEY. This repository contains that link table and all code required to generate it
